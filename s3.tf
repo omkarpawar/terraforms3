@@ -1,12 +1,14 @@
-resource "random_pet" "bucket_name" {
-  length = 2
+provider "aws"{
+  profile = "myaws"
+  region ="us-east-2"
 }
 
-resource "aws_s3_bucket" "example_bucket" {
-  bucket = "example-${random_pet.bucket_name.id}"
-  acl    = "private"
-
-  tags = {
-    Environment = "dev"
+resource "aws_s3_bucket" "b"{
+  bucket ="myawsbucket1234555443"
+  acl ="private"
+  
+  tags ={
+    Name       = "My_Bucket"
+    Enviroment = "Dev"
   }
 }
