@@ -1,14 +1,13 @@
-provider "aws"{
-  profile = "myaws"
-  region ="us-east-2"
+provider "aws" {
+  region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "b"{
-  bucket ="myawsbucket1234555443"
-  acl ="private"
-  
-  tags ={
-    Name       = "My_Bucket"
-    Enviroment = "Dev"
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-bucket-name234545"
+  acl    = "private"
+
+  tags = {
+    Name        = "My Bucket"
+    Environment = "Production"
   }
 }
