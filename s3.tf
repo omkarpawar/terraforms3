@@ -2,12 +2,11 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-bucket-name2334345567"
-  acl    = "private"
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
 
   tags = {
-    Name        = "My Bucket"
-    Environment = "Production"
+    Name = "example-instance"
   }
 }
